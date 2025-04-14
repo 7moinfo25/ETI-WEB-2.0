@@ -4,49 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Escuela Técnica</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="/css/styles.css">
     <link rel="icon" type="image/png" href="imagenes/escudo.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- Folded Corner Login Trigger -->
-    <div class="corner-fold" id="login-trigger">
-        <div class="fold"></div>
-        <div class="login-icon">
-            <i class="fas fa-user-lock"></i>
-        </div>
-    </div>
-
-    <!-- Login Modal -->
-    <div class="login-modal" id="login-modal">
-        <div class="login-container">
-            <button class="close-btn" id="close-login"><i class="fas fa-times"></i></button>
-            <div class="login-header">
-                <h2>Acceso Docentes</h2>
-                <p>Ingrese sus credenciales para acceder al panel</p>
-            </div>
-            <form id="login-form" action="admin/dashboard.php" method="post">
-                <div class="form-group">
-                    <label for="username"><i class="fas fa-user"></i></label>
-                    <input type="text" id="username" name="username" placeholder="Nombre de usuario" required>
-                </div>
-                <div class="form-group">
-                    <label for="password"><i class="fas fa-lock"></i></label>
-                    <input type="password" id="password" name="password" placeholder="Contraseña" required>
-                </div>
-                <div class="form-group remember-me">
-                    <input type="checkbox" id="remember" name="remember">
-                    <label for="remember">Recordarme</label>
-                </div>
-                <button type="submit" class="login-btn">Ingresar</button>
-                <div class="forgot-password">
-                    <a href="#">¿Olvidó su contraseña?</a>
-                </div>
-            </form>
-        </div>
-    </div>
-
     <main>
         <!-- Welcome Section -->
         <section class="welcome-section">
@@ -254,55 +216,6 @@ L.control.zoom({
     </footer>
     </main>
 
-    <script src="js/login.js"></script>
-    <script>
-                // Script para el funcionamiento del login
-                document.addEventListener('DOMContentLoaded', function() {
-            // Get DOM elements
-            const loginTrigger = document.getElementById('login-trigger');
-            const loginModal = document.getElementById('login-modal');
-            const closeLogin = document.getElementById('close-login');
-            const loginForm = document.getElementById('login-form');
-
-            // Open login modal when clicking the folded corner
-            loginTrigger.addEventListener('click', function() {
-                loginModal.classList.add('active');
-                document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
-            });
-
-            // Close login modal when clicking the close button
-            closeLogin.addEventListener('click', function() {
-                loginModal.classList.remove('active');
-                document.body.style.overflow = ''; // Restore scrolling
-            });
-
-            // Close modal when clicking outside the login container
-            loginModal.addEventListener('click', function(e) {
-                if (e.target === loginModal) {
-                    loginModal.classList.remove('active');
-                    document.body.style.overflow = '';
-                }
-            });
-
-            // Handle form submission
-            loginForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                const username = document.getElementById('username').value;
-                const password = document.getElementById('password').value;
-                
-                // Here you would typically send an AJAX request to verify credentials
-                // For demonstration, we'll use a simple check
-                if (username === 'admin' && password === 'password') {
-                    // Successful login
-                    window.location.href = 'admin/dashboard.php';
-                } else {
-                    // Failed login
-                    alert('Usuario o contraseña incorrectos');
-                }
-            });
-        });
-    </script>
-    <script src="js/script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
