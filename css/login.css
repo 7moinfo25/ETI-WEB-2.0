@@ -21,7 +21,7 @@
     right: 0px;
     border-width: 0;
     border-style: solid;
-    background: #72cbd1;
+    background: var(--primary-color);
     display: block;
     border-color: transparent #fff transparent #fff;
     -webkit-transition: border-width 0.2s ease-out;
@@ -84,10 +84,10 @@
   .page2 i {
     font-size: 24px;
     margin-bottom: 5px;
-  }
+}
   
-  /* Estilo para la esquina doblada */
-.corner-fold {
+    /* Estilo para la esquina doblada */
+    .corner-fold {
     position: fixed;
     top: 0;
     right: 0;
@@ -97,20 +97,74 @@
     z-index: 1000;
     cursor: pointer;
     overflow: hidden;
-}
-
-.fold {
+    }
+    
+    .fold {
     position: absolute;
     top: 0;
     right: 0;
     width: 0;
     height: 0;
     border-style: solid;
-    border-width: 0 0 0 0;
-    border-color: transparent #fff transparent transparent;
+    /* Hacemos que la esquina sea visible por defecto con un tamaño inicial */
+    border-width: 0 50px 50px 0;
+    border-color: transparent #ffffff transparent transparent;
     transition: all 0.3s ease;
     z-index: 1001;
-}
+    /* Añadimos una sombra sutil para dar profundidad */
+    box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.15);
+    }  
+
+    /* Al hacer hover, la esquina se hace más grande */
+.corner-fold:hover .fold {
+    border-width: 0 100px 100px 0;
+    }
+
+    /* Añadimos un borde interno para simular el doblez del papel */
+.fold::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 15px;
+    height: 15px;
+    background: linear-gradient(135deg, transparent 50%, rgba(255, 255, 255, 0.2) 50%);
+    transform: translate(-50px, 0);
+    }
+
+/* Icono de login visible parcialmente por defecto */
+.login-icon {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    /* Cambia este color al que prefieras */
+    color: #ffffff; /* Actualmente es blanco */
+    font-size: 24px;
+    opacity: 0.8;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 1002;
+    }
+
+    .corner-fold:hover .login-icon {
+        opacity: 1;
+        transform: scale(1.1);
+    }
+
+/* Añadimos un efecto de pulso sutil para llamar la atención */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+    }    
+        
+    .fold {
+        animation: pulse 2s infinite ease-in-out;
+        }
+        
+    .corner-fold:hover .fold {
+        animation: none;
+        }
+
 
 .corner-fold:hover .fold {
     border-width: 0 100px 100px 0;
@@ -121,7 +175,7 @@
     position: absolute;
     top: 15px;
     right: 15px;
-    color: #20b5bf;
+    color: var(--primary-color);
     font-size: 24px;
     opacity: 0;
     transition: opacity 0.3s ease;
