@@ -10,20 +10,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- Folded Corner Login Trigger -->
-    <div class="corner-fold" id="login-trigger">
-        <div class="fold"></div>
-        <div class="login-icon">
-            <i class="fas fa-user-lock"></i>
-        </div>
-    </div>
-
     <!-- Header (puedes reutilizar el header de tu página principal) -->
     <header>
         <div class="container">
             <div class="header-content">
                 <div class="logo">
-                    <a href="index.html">
+                    <a href="index.php">
                         <img src="imagenes/escudo.png" alt="Escudo de la Escuela Técnica">
                         <h1>Escuela Técnica N°1</h1>
                     </a>
@@ -40,27 +32,7 @@
     </header>
 
     <!-- Navegación (puedes reutilizar la navegación de tu página principal) -->
-    <nav class="main-nav">
-        <div class="container">
-            <ul class="nav-list">
-                <li class="nav-item">
-                    <a href="index.html" class="nav-link">Inicio</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a href="#" class="nav-link">Institucional <i class="fas fa-chevron-down"></i></a>
-                </li>
-                <li class="nav-item">
-                    <a href="informatica.html" class="nav-link">Informática</a>
-                </li>
-                <li class="nav-item">
-                    <a href="electromecanica.html" class="nav-link">Electromecánica</a>
-                </li>
-                <li class="nav-item">
-                    <a href="noticias.html" class="nav-link active">Noticias</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+    <?php include 'header.php'; ?>
 
     <!-- Main Content -->
     <main>
@@ -198,127 +170,32 @@
     </main>
 
     <!-- Footer (puedes reutilizar el footer de tu página principal) -->
-    <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <h3>Escuela Técnica N°1</h3>
-                    <p>Formando profesionales desde 1964 con excelencia académica y compromiso social.</p>
-                </div>
-                <div class="footer-col">
-                    <h3>Enlaces rápidos</h3>
-                    <ul>
-                        <li><a href="index.html">Inicio</a></li>
-                        <li><a href="#">Ciclo Básico</a></li>
-                        <li><a href="#">Ciclo Superior</a></li>
-                        <li><a href="#">Horarios</a></li>
-                        <li><a href="#">Acuerdo de convivencia</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h3>Contacto</h3>
-                    <address>
-                        <p>Av. Avellaneda 687</p>
-                        <p>Las Flores, CP 7200</p>
-                        <p>Tel: (2244)45-1212</p>
-                        <p>Email: eest1lasflores@abc.gob.ar</p>
-                    </address>
-                </div>
-                <div class="footer-col">
-                    <h3>Seguinos</h3>
-                    <div class="social-links">
-                        <a href="https://www.facebook.com/escuela.tecnica.3382/?locale=es_LA" class="social-link"><i class="fab fa-facebook"></i></a>
-                        <a href="https://www.instagram.com/escuela_tecnica_lasflores?igsh=MTlyc2o3em5nMGxmOQ" class="social-link"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>© <span id="current-year"></span> Escuela de Educación Secundaria Técnica Nº1 Gral. Manuel Belgrano | Av. Avellaneda 687, Las
-                    Flores, Prov. de Buenos Aires, Argentina. <br> Todos los derechos reservados.</p>
-            </div>
-        </div>
-    </footer>
+    <?php include 'footer.php'; ?>
 
-    <!-- Login Modal -->
-    <div class="login-modal" id="login-modal">
-        <div class="login-container">
-            <button class="close-btn" id="close-login"><i class="fas fa-times"></i></button>
-            <div class="login-header">
-                <h2>Acceso Docentes</h2>
-                <p>Ingrese sus credenciales para acceder al panel</p>
-            </div>
-            <form id="login-form" action="/dashboard.php" method="post">
-                <div class="form-group">
-                    <label for="username"><i class="fas fa-user"></i></label>
-                    <input type="text" id="username" name="username" placeholder="Nombre de usuario" required>
-                </div>
-                <div class="form-group">
-                    <label for="password"><i class="fas fa-lock"></i></label>
-                    <input type="password" id="password" name="password" placeholder="Contraseña" required>
-                </div>
-                <div class="form-group remember-me">
-                    <input type="checkbox" id="remember" name="remember">
-                    <label for="remember">Recordarme</label>
-                </div>
-                <button type="submit" class="login-btn">Ingresar</button>
-                <div class="forgot-password">
-                    <a href="#">¿Olvidó su contraseña?</a>
-                </div>
-            </form>
-        </div>
-    </div>
+<!--Scripts-->
+<script>
+    const filtroBtns = document.querySelectorAll('.filtro-btn');
+const noticiaCards = document.querySelectorAll('.noticia-card');
 
-    <script>
-        // Establecer el año actual en el footer
-        document.getElementById('current-year').textContent = new Date().getFullYear();
-
-        // Funcionalidad para el login
-        document.addEventListener('DOMContentLoaded', function() {
-            const loginTrigger = document.getElementById('login-trigger');
-            const loginModal = document.getElementById('login-modal');
-            const closeLogin = document.getElementById('close-login');
-
-            loginTrigger.addEventListener('click', function() {
-                loginModal.classList.add('active');
-                document.body.style.overflow = 'hidden';
-            });
-
-            closeLogin.addEventListener('click', function() {
-                loginModal.classList.remove('active');
-                document.body.style.overflow = '';
-            });
-
-            loginModal.addEventListener('click', function(e) {
-                if (e.target === loginModal) {
-                    loginModal.classList.remove('active');
-                    document.body.style.overflow = '';
-                }
-            });
-
-            // Filtrado de noticias por categoría
-            const filtroBtns = document.querySelectorAll('.filtro-btn');
-            const noticiaCards = document.querySelectorAll('.noticia-card');
-
-            filtroBtns.forEach(btn => {
-                btn.addEventListener('click', function() {
-                    // Remover clase active de todos los botones
-                    filtroBtns.forEach(b => b.classList.remove('active'));
-                    // Añadir clase active al botón clickeado
-                    this.classList.add('active');
-
-                    const categoria = this.getAttribute('data-categoria');
-                    
-                    // Mostrar/ocultar noticias según la categoría
-                    noticiaCards.forEach(card => {
-                        if (categoria === 'todas' || card.getAttribute('data-categoria') === categoria) {
-                            card.style.display = 'block';
-                        } else {
-                            card.style.display = 'none';
-                        }
-                    });
-                });
-            });
+filtroBtns.forEach(btn => {
+    btn.addEventListener('click', function() {
+        // Remover clase active de todos los botones
+        filtroBtns.forEach(b => b.classList.remove('active'));
+        
+        // Añadir clase active al botón clickeado
+        this.classList.add('active');
+        const categoria = this.getAttribute('data-categoria');
+        
+        // Mostrar/ocultar noticias según la categoría
+        noticiaCards.forEach(card => {
+            if (categoria === 'todas' || card.getAttribute('data-categoria') === categoria) {
+                card.style.display = 'block';
+            } else {
+                card.style.display = 'none';
+            }
         });
-    </script>
+    });
+});
+</script>
 </body>
 </html>

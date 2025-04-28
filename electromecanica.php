@@ -15,7 +15,7 @@
         <div class="container">
             <div class="header-content">
                 <div class="logo">
-                    <a href="index.html">
+                    <a href="index.php">
                         <img src="imagenes/escudo.png" alt="Escudo de la Escuela Técnica">
                         <h1>Escuela Técnica N°1</h1>
                     </a>
@@ -32,48 +32,7 @@
     </header>
 
     <!-- Desktop Navigation -->
-    <nav class="main-nav">
-        <div class="container">
-            <ul class="nav-list">
-                <li class="nav-item dropdown">
-                    <a href="#" class="nav-link">Institucional <i class="fas fa-chevron-down"></i></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Autoridades</a></li>
-                        <li><a href="#">Información Administrativa</a></li>
-                        <li><a href="#">Acuerdo de convivencia</a></li>
-                        <li><a href="#">Profesores</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item dropdown">
-                    <a href="#" class="nav-link">Egresados <i class="fas fa-chevron-down"></i></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">1970-1980</a></li>
-                        <li><a href="#">1981-1990</a></li>
-                        <li><a href="#">1991-2000</a></li>
-                        <li><a href="#">2001-2010</a></li>
-                        <li><a href="#">2011-2020</a></li>
-                        <li><a href="#">2021-2030</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item dropdown">
-                    <a href="#" class="nav-link">Talleres de Ciclo Básico <i class="fas fa-chevron-down"></i></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Hojalatería</a></li>
-                        <li><a href="#">Carpintería</a></li>
-                        <li><a href="#">Vitrofusión</a></li>
-                        <li><a href="#">Herrería</a></li>
-                        <li><a href="#">Fundición</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item">
-                    <a href="informatica.html" class="nav-link">Informática</a>
-                </li>
-                <li class="nav-item">
-                    <a href="electromecanica.html" class="nav-link active">Electromecánica</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+        <?php include 'header.php'; ?>
 
     <!-- Mobile Navigation -->
     <div class="mobile-nav" id="mobile-nav">
@@ -120,10 +79,10 @@
                     </ul>
                 </li>
                 <li class="mobile-nav-item">
-                    <a href="informatica.html" class="mobile-nav-link">Informática</a>
+                    <a href="informatica.php" class="mobile-nav-link">Informática</a>
                 </li>
                 <li class="mobile-nav-item">
-                    <a href="electromecanica.html" class="mobile-nav-link">Electromecánica</a>
+                    <a href="electromecanica.php" class="mobile-nav-link">Electromecánica</a>
                 </li>
             </ul>
         </div>
@@ -308,46 +267,7 @@
     </main>
 
     <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <h3>Escuela Técnica N°1</h3>
-                    <p>Formando profesionales desde 1964 con excelencia académica y compromiso social.</p>
-                </div>
-                <div class="footer-col">
-                    <h3>Enlaces rápidos</h3>
-                    <ul>
-                        <li><a href="index.html">Inicio</a></li>
-                        <li><a href="#">Ciclo Básico</a></li>
-                        <li><a href="#">Ciclo Superior</a></li>
-                        <li><a href="#">Horarios</a></li>
-                        <li><a href="#">Acuerdo de convivencia</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col" id="redirect-contacto">
-                    <h3>Contacto</h3>
-                    <address>
-                        <p>Av. Avellaneda 687</p>
-                        <p>Las Flores, CP 7200</p>
-                        <p>Tel: (2244)45-1212</p>
-                        <p>Email: eest1lasflores@abc.gob.ar</p>
-                    </address>
-                </div>
-                <div class="footer-col">
-                    <h3>Seguinos</h3>
-                    <div class="social-links">
-                        <a href="https://www.facebook.com/escuela.tecnica.3382/?locale=es_LA" class="social-link"><i class="fab fa-facebook"></i></a>
-                        <a href="https://www.instagram.com/escuela_tecnica_lasflores?igsh=MTlyc2o3em5nMGxmOQ" class="social-link"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>© <span id="current-year"></span> Escuela de Educación Secundaria Técnica Nº1 Gral. Manuel Belgrano | Av. Avellaneda 687, Las
-                    Flores, Prov. de Buenos Aires, Argentina. <br> Todos los derechos reservados.</p>
-            </div>
-        </div>
-    </footer>
+    <?php include 'footer.php'; ?>
 
     <script>
         // Set current year in footer

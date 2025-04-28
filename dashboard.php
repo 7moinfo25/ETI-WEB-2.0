@@ -1,191 +1,84 @@
 <?php
-// Start session
 session_start();
+require_once 'config/database.php'; // Archivo de conexión a la BD
 
-// Check if user is logged in
-if (!isset($_SESSION['user_id'])) {
-    // If login form was submitted, verify credentials
-    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        $username = $_POST['username'] ?? '';
-        $password = $_POST['password'] ?? '';
-        
-        // In a real application, you would verify against a database
-        // This is a simplified example
-        if ($username === 'admin' && $password === 'password') {
-            // Set session variables
-            $_SESSION['user_id'] = 1;
-            $_SESSION['username'] = $username;
-            $_SESSION['user_role'] = 'teacher';
-        } else {
-            // Redirect back to login page with error
-            header('Location: ../index.html?login_error=1');
-            exit;
-        }
-    } else {
-        // Not logged in and no form submitted, redirect to login page
-        header('Location: ../index.html');
-        exit;
+// Procesar el formulario de login
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $username = trim($_POST['username']);
+    $password = $_POST['password'];
+    $remember = isset($_POST['remember']) ? true : false;
+    
+    // Validación básica
+    if (empty($username) || empty($password)) {
+        $_SESSION['error'] = "Por favor, complete todos los campos";
+        header("Location: ../index.php");
+        exit();
     }
+    
+    try {
+        // Conexión a la base de datos
+        $conn = new PDO("mysql:host=".DB_HOST.";dbname=".DB_NAME, DB_USER, DB_PASS);
+        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        
+        // Buscar usuario
+        $stmt = $conn->prepare("SELECT id, username, password, nombre_completo, rol FROM usuarios WHERE username = ? AND activo = TRUE");
+        $stmt->execute([$username]);
+        $user = $stmt->fetch(PDO::FETCH_ASSOC);
+        
+        // Verificar contraseña
+        if ($user && password_verify($password, $user['password'])) {
+            // Iniciar sesión
+            $_SESSION['user_id'] = $user['id'];
+            $_SESSION['username'] = $user['username'];
+            $_SESSION['nombre'] = $user['nombre_completo'];
+            $_SESSION['rol'] = $user['rol'];
+            $_SESSION['logged_in'] = true;
+            
+            // Actualizar último acceso
+            $updateStmt = $conn->prepare("UPDATE usuarios SET ultimo_acceso = NOW() WHERE id = ?");
+            $updateStmt->execute([$user['id']]);
+            
+            // Registrar acceso exitoso
+            $ip = $_SERVER['REMOTE_ADDR'];
+            $logStmt = $conn->prepare("INSERT INTO registros_acceso (usuario_id, ip, exito) VALUES (?, ?, TRUE)");
+            $logStmt->execute([$user['id'], $ip]);
+            
+            // Manejar "recordarme"
+            if ($remember) {
+                $token = bin2hex(random_bytes(32));
+                $expiry = date('Y-m-d H:i:s', strtotime('+30 days'));
+                
+                $rememberStmt = $conn->prepare("INSERT INTO sesiones_recordadas (usuario_id, token, fecha_expiracion) VALUES (?, ?, ?)");
+                $rememberStmt->execute([$user['id'], $token, $expiry]);
+                
+                // Establecer cookie segura
+                setcookie('remember_token', $token, strtotime('+30 days'), '/', '', true, true);
+            }
+            
+            // Redirigir al dashboard
+            header("Location: dashboard/index.php");
+            exit();
+        } else {
+            // Si las credenciales son incorrectas
+            if ($user) {
+                // Registrar intento fallido
+                $ip = $_SERVER['REMOTE_ADDR'];
+                $logStmt = $conn->prepare("INSERT INTO registros_acceso (usuario_id, ip, exito) VALUES (?, ?, FALSE)");
+                $logStmt->execute([$user['id'], $ip]);
+            }
+            
+            $_SESSION['error'] = "Nombre de usuario o contraseña incorrectos";
+            header("Location: ../index.php");
+            exit();
+        }
+    } catch (PDOException $e) {
+        $_SESSION['error'] = "Error de conexión: " . $e->getMessage();
+        header("Location: ../index.php");
+        exit();
+    }
+} else {
+    // Si alguien intenta acceder directamente a este archivo
+    header("Location: ../index.php");
+    exit();
 }
 ?>
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Panel de Docentes - Escuela Técnica</title>
-    <link rel="stylesheet" href="../css/styles.css">
-    <link rel="stylesheet" href="css/admin.css">
-    <link rel="icon" type="image/png" href="../imagenes/escudo.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-</head>
-<body class="admin-body">
-    <!-- Admin Header -->
-    <header class="admin-header">
-        <div class="container">
-            <div class="admin-header-content">
-                <div class="admin-logo">
-                    <img src="../imagenes/escudo.png" alt="Escuela Técnica">
-                    <h1>Panel de Docentes</h1>
-                </div>
-                <div class="admin-user">
-                    <span>Bienvenido, <?php echo htmlspecialchars($_SESSION['username']); ?></span>
-                    <a href="logout.php" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</a>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <!-- Admin Sidebar and Main Content -->
-    <div class="admin-container">
-        <aside class="admin-sidebar">
-            <nav class="admin-nav">
-                <ul>
-                    <li class="active">
-                        <a href="dashboard.php"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
-                    </li>
-                    <li>
-                        <a href="upload.php"><i class="fas fa-upload"></i> Subir Archivos</a>
-                    </li>
-                    <li>
-                        <a href="files.php"><i class="fas fa-file-alt"></i> Mis Archivos</a>
-                    </li>
-                    <li>
-                        <a href="profile.php"><i class="fas fa-user"></i> Mi Perfil</a>
-                    </li>
-                    <li>
-                        <a href="settings.php"><i class="fas fa-cog"></i> Configuración</a>
-                    </li>
-                </ul>
-            </nav>
-        </aside>
-
-        <main class="admin-main">
-            <div class="admin-content">
-                <div class="page-header">
-                    <h2>Dashboard</h2>
-                    <p>Bienvenido al panel de administración para docentes</p>
-                </div>
-
-                <!-- Dashboard Stats -->
-                <div class="stats-container">
-                    <div class="stat-card">
-                        <div class="stat-icon">
-                            <i class="fas fa-file-pdf"></i>
-                        </div>
-                        <div class="stat-info">
-                            <h3>Archivos PDF</h3>
-                            <p class="stat-number">12</p>
-                        </div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-icon">
-                            <i class="fas fa-file-word"></i>
-                        </div>
-                        <div class="stat-info">
-                            <h3>Documentos</h3>
-                            <p class="stat-number">8</p>
-                        </div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-icon">
-                            <i class="fas fa-image"></i>
-                        </div>
-                        <div class="stat-info">
-                            <h3>Imágenes</h3>
-                            <p class="stat-number">24</p>
-                        </div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-icon">
-                            <i class="fas fa-download"></i>
-                        </div>
-                        <div class="stat-info">
-                            <h3>Descargas</h3>
-                            <p class="stat-number">156</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Recent Uploads -->
-                <div class="recent-uploads">
-                    <div class="section-header">
-                        <h3>Archivos Recientes</h3>
-                        <a href="upload.php" class="btn btn-primary"><i class="fas fa-plus"></i> Subir Nuevo</a>
-                    </div>
-                    <div class="table-responsive">
-                        <table class="admin-table">
-                            <thead>
-                                <tr>
-                                    <th>Nombre del Archivo</th>
-                                    <th>Tipo</th>
-                                    <th>Tamaño</th>
-                                    <th>Fecha</th>
-                                    <th>Acciones</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Programa_Matemáticas_2023.pdf</td>
-                                    <td>PDF</td>
-                                    <td>1.2 MB</td>
-                                    <td>10/04/2023</td>
-                                    <td class="actions">
-                                        <a href="#" class="action-btn view-btn"><i class="fas fa-eye"></i></a>
-                                        <a href="#" class="action-btn edit-btn"><i class="fas fa-edit"></i></a>
-                                        <a href="#" class="action-btn delete-btn"><i class="fas fa-trash"></i></a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Guía_Práctica_Física.docx</td>
-                                    <td>DOCX</td>
-                                    <td>845 KB</td>
-                                    <td>05/04/2023</td>
-                                    <td class="actions">
-                                        <a href="#" class="action-btn view-btn"><i class="fas fa-eye"></i></a>
-                                        <a href="#" class="action-btn edit-btn"><i class="fas fa-edit"></i></a>
-                                        <a href="#" class="action-btn delete-btn"><i class="fas fa-trash"></i></a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Presentación_Historia.pptx</td>
-                                    <td>PPTX</td>
-                                    <td>3.5 MB</td>
-                                    <td>01/04/2023</td>
-                                    <td class="actions">
-                                        <a href="#" class="action-btn view-btn"><i class="fas fa-eye"></i></a>
-                                        <a href="#" class="action-btn edit-btn"><i class="fas fa-edit"></i></a>
-                                        <a href="#" class="action-btn delete-btn"><i class="fas fa-trash"></i></a>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </main>
-    </div>
-
-    <script src="js/admin.js"></script>
-</body>
-</html>
