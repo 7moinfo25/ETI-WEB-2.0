@@ -26,11 +26,13 @@
                 <h2>Acceso Docentes</h2>
                 <p>Ingrese sus credenciales para acceder al panel</p>
             </div>
-            <form id="login-form">
-                <input type="text" id="username" placeholder="Usuario" required><br>
-                <input type="password" id="password" placeholder="Contraseña" required><br>
+            <form id="auth-form">
+                <input type="text" id="nombre" placeholder="Nombre" required style="display: none;">
+                <input type="email" id="email" placeholder="Email" required>
+                <input type="password" id="password" placeholder="Contraseña" required>
                 <button type="submit">Ingresar</button>
             </form>
+            <div class="switch" id="toggle-form" onclick="logina()"><p>¿No tienes cuenta? Registrate</p></div>
             <p id="mensaje"></p>
         </div>
     </div>
@@ -203,9 +205,9 @@ L.control.zoom({
     <?php include 'footer.php'; ?>
     </main>
 <!--Script de noticias y login-->
+    <script src="js/servidor.js"></script>
     <script src="js/login.js"></script>
     <script src="js/script.js"></script>
-    <script src="js/servidor.js"></script>
     <script src="js/easteregg.js"></script>
 </body>
 </html>
