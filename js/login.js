@@ -24,22 +24,4 @@ document.addEventListener('DOMContentLoaded', function() {
             document.body.style.overflow = '';
         }
     });
-
-    // Handle form submission
-    loginForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        const username = document.getElementById('username').value;
-        const password = document.getElementById('password').value;
-        
-        // Here you would typically send an AJAX request to verify credentials
-        // For demonstration, we'll use a simple check
-        if (username === 'admin' && password === 'password') {
-            // Successful login
-            window.location.href = 'admin/dashboard.php';
-        } else {
-            // Failed login
-            alert('Usuario o contraseña incorrectos');
-        }
-    });
 });

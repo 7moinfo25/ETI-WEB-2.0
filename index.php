@@ -26,27 +26,15 @@
                 <h2>Acceso Docentes</h2>
                 <p>Ingrese sus credenciales para acceder al panel</p>
             </div>
-            <form id="login-form" action="dashboard.php" method="post">
-                <div class="form-group">
-                    <label for="username"><i class="fas fa-user"></i></label>
-                    <input type="text" id="username" name="username" placeholder="Nombre de usuario" required>
-                </div>
-                <div class="form-group">
-                    <label for="password"><i class="fas fa-lock"></i></label>
-                    <input type="password" id="password" name="password" placeholder="Contraseña" required>
-                </div>
-                <div class="form-group remember-me">
-                    <input type="checkbox" id="remember" name="remember">
-                    <label for="remember">Recordarme</label>
-                </div>
-                <button type="submit" class="login-btn">Ingresar</button>
-                <div class="forgot-password">
-                    <a href="#">¿Olvidó su contraseña?</a>
-                </div>
+            <form id="login-form">
+                <input type="text" id="username" placeholder="Usuario" required><br>
+                <input type="password" id="password" placeholder="Contraseña" required><br>
+                <button type="submit">Ingresar</button>
             </form>
+            <p id="mensaje"></p>
         </div>
     </div>
-
+    
     <main>
         <!-- Welcome Section -->
         <section class="welcome-section">
@@ -61,7 +49,7 @@
                         </div>
                     </div>
                     <div class="welcome-image">
-                        <img src="imagenes/escuelafoto.jpeg" alt="Escuela Técnica">
+                        <img src="imagenes/escuelafoto.jpeg" alt="Escuela Técnica" id="fotoEsc">
                     </div>
                 </div>
             </div>
@@ -217,5 +205,7 @@ L.control.zoom({
 <!--Script de noticias y login-->
     <script src="js/login.js"></script>
     <script src="js/script.js"></script>
+    <script src="js/servidor.js"></script>
+    <script src="js/easteregg.js"></script>
 </body>
 </html>
