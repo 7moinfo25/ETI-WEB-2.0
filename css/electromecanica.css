@@ -1,11 +1,11 @@
 /* Specific styles for the Electromecanica page */
 
 :root {
-    --electromecanica-primary: #512e92;
-    --electromecanica-secondary: #7c4fce;
-    --electromecanica-light: rgb(227, 211, 255);
-    --electromecanica-dark: #1d054b;
-    --electromecanica-accent: #6337b6;
+    --electromecanica-primary: #d97706;
+    --electromecanica-secondary: #f59e0b;
+    --electromecanica-light: #fef3c7;
+    --electromecanica-dark: #b45309;
+    --electromecanica-accent: #fbbf24;
 }
 
 /* Header styling with electromecanica theme */
