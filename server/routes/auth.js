@@ -5,22 +5,23 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 const router = express.Router();
-const Profesor = require('../models/Profesor');
+const Professor = require('../models/Professor');
 
 // POST /register
 router.post('/register', async (req, res) => {
   const { nombre, email, contrasena } = req.body;
 
   try {
-    const existe = await Profesor.findOne({ email });
+    // ✅ Cambiado de 'Profesor' a 'Professor'
+    const existe = await Professor.findOne({ email });
     if (existe) {
       return res.status(400).json({ success: false, message: 'Ya existe un usuario con ese email' });
     }
 
     const contrasenaHasheada = await bcrypt.hash(contrasena, 10);
 
-    const nuevoProfesor = new Profesor({ nombre, email, contrasena: contrasenaHasheada });
-    await nuevoProfesor.save();
+    const nuevoProfessor = new Professor({ nombre, email, contrasena: contrasenaHasheada });
+    await nuevoProfessor.save();
 
     res.status(201).json({ success: true, message: 'Registro exitoso' });
   } catch (error) {
@@ -33,18 +34,18 @@ router.post('/login', async (req, res) => {
   const { email, contrasena } = req.body;
 
   try {
-    const profe = await Profesor.findOne({ email });
-    if (!profe) {
+    const profesor = await Professor.findOne({ email });
+    if (!profesor) {
       return res.status(401).json({ success: false, message: 'Credenciales inválidas' });
     }
 
-    const match = await bcrypt.compare(contrasena, profe.contrasena);
+    const match = await bcrypt.compare(contrasena, profesor.contrasena);
     if (!match) {
       return res.status(401).json({ success: false, message: 'Credenciales inválidas' });
     }
 
     const token = jwt.sign(
-      { id: profe._id, nombre: profe.nombre, email: profe.email },
+      { id: profesor._id, nombre: profesor.nombre, email: profesor.email },
       process.env.JWT_SECRET,
       { expiresIn: '2h' }
     );

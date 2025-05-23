@@ -6,4 +6,5 @@ const profesorSchema = new Schema({
   contrasena: { type: String, required: true }
 });
 
-module.exports = model('Profesor', profesorSchema, "eti_web");
+const Professor = model('Professor', profesorSchema);
+module.exports = Professor;
