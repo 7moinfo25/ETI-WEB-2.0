@@ -1,11 +1,12 @@
 /* Base styles */
 :root {
+    --primary-color2: #a31616;
     --primary-color: #0369a1;
     --primary-light: #0ea5e9;
     --primary-dark: #075985;
-    --secondary-color: #d97706;
-    --secondary-light: #f59e0b;
-    --secondary-dark: #b45309;
+    --secondary-color: #512e92;
+    --secondary-light: #7c4fce;
+    --secondary-dark: #1d054b;
     --text-color: #1e293b;
     --text-muted: #64748b;
     --bg-light: #f8fafc;
@@ -615,7 +616,7 @@ header {
 }
 
 .electromecanica .modality-icon {
-    background-color: #fef3c7;
+    background-color: rgb(227, 211, 255);
     color: var(--secondary-color);
 }
 
@@ -801,3 +802,4 @@ footer {
         grid-template-columns: repeat(4, 1fr);
     }
 }
+

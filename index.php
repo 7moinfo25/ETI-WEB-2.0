@@ -14,7 +14,7 @@
     <div class="corner-fold" id="login-trigger">
         <div class="fold"></div>
         <div class="login-icon">
-            <i class="fas fa-user-lock"></i>
+            <i  class="fas fa-user-lock"></i>
         </div>
     </div>
 
@@ -26,17 +26,27 @@
                 <h2>Acceso Docentes</h2>
                 <p>Ingrese sus credenciales para acceder al panel</p>
             </div>
-            <form id="auth-form">
-                <input type="text" id="nombre" placeholder="Nombre" required style="display: none;">
-                <input type="email" id="email" placeholder="Email" required>
-                <input type="password" id="password" placeholder="Contraseña" required>
-                <button type="submit">Ingresar</button>
+            <form id="login-form" action="dashboard.php" method="post">
+                <div class="form-group">
+                    <label for="username"><i class="fas fa-user"></i></label>
+                    <input type="text" id="username" name="username" placeholder="Nombre de usuario" required>
+                </div>
+                <div class="form-group">
+                    <label for="password"><i class="fas fa-lock"></i></label>
+                    <input type="password" id="password" name="password" placeholder="Contraseña" required>
+                </div>
+                <div class="form-group remember-me">
+                    <input type="checkbox" id="remember" name="remember">
+                    <label for="remember">Recordarme</label>
+                </div>
+                <button type="submit" class="login-btn">Ingresar</button>
+                <div class="forgot-password">
+                    <a href="interfaz_profe.php">¿Olvidó su contraseña?</a>
+                </div>
             </form>
-            <div class="switch" id="toggle-form" onclick="logina()"><p>¿No tienes cuenta? Registrate</p></div>
-            <p id="mensaje"></p>
         </div>
     </div>
-    
+
     <main>
         <!-- Welcome Section -->
         <section class="welcome-section">
@@ -51,7 +61,7 @@
                         </div>
                     </div>
                     <div class="welcome-image">
-                        <img src="imagenes/escuelafoto.jpeg" alt="Escuela Técnica" id="fotoEsc">
+                        <img src="imagenes/escuelafoto.jpeg" alt="Escuela Técnica">
                     </div>
                 </div>
             </div>
@@ -205,9 +215,7 @@ L.control.zoom({
     <?php include 'footer.php'; ?>
     </main>
 <!--Script de noticias y login-->
-    <script src="js/servidor.js"></script>
     <script src="js/login.js"></script>
     <script src="js/script.js"></script>
-    <script src="js/easteregg.js"></script>
 </body>
 </html>
