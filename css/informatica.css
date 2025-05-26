@@ -1,11 +1,11 @@
 /* Specific styles for the Informatica page */
 
 :root {
-    --informatica-primary: #0369a1;
-    --informatica-secondary: #0ea5e9;
-    --informatica-light: #dbeafe;
-    --informatica-dark: #075985;
-    --informatica-accent: #0284c7;
+--informatica-primary:   #1976d2;      /* Azul principal */
+  --informatica-secondary: #64b5f6;      /* Azul claro */
+  --informatica-light:     rgb(227, 242, 253); /* Azul muy claro */
+  --informatica-dark:      #0d47a1;      /* Azul oscuro */
+  --informatica-accent:    #82b1ff;      /* Azul acento */
 }
 
 /* Header styling with informatica theme */

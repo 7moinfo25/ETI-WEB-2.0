@@ -6,8 +6,8 @@
     <title>Escuela Técnica</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/login.css">
-    <link rel="icon" type="image/png" href="imagenes/escudo.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="imagenes/escudo.png" type="image/png">
 </head>
 <body>
     <!-- Folded Corner Login Trigger -->
@@ -102,8 +102,8 @@ crossorigin=""/>
 
 <!-- Al final de tu body -->
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" 
-  integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" 
-  crossorigin=""></script>
+integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" 
+crossorigin=""></script>
 
 <!-- Función de mapa -->
 <script>
@@ -112,7 +112,7 @@ const mapa = L.map('mapa').setView([-36.02054340825117, -59.102123271464116], 17
 
 // Añadir capa de OpenStreetMap
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(mapa);
 
 // Añadir marcador para la Escuela de Educación Técnica N°1
@@ -121,12 +121,12 @@ const coordenadas = [-36.02054340825117, -59.102123271464116];
 
 // Crear icono personalizado similar al de Google Maps
 const iconoEscuela = L.icon({
-  iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png',
-  shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
-  iconSize: [25, 41],
-  iconAnchor: [12, 41],
-  popupAnchor: [1, -34],
-  shadowSize: [41, 41]
+iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png',
+shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+iconSize: [25, 41],
+iconAnchor: [12, 41],
+popupAnchor: [1, -34],
+shadowSize: [41, 41]
 });
 
 // Añadir el marcador al mapa
@@ -137,7 +137,7 @@ marcador.bindPopup("<b>Escuela de Educación Técnica N°1</b>").openPopup();
 
 // Añadir controles de zoom
 L.control.zoom({
-  position: 'bottomright'
+position: 'bottomright'
 }).addTo(mapa);
 </script>
 

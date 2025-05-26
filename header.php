@@ -16,7 +16,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
                 </ul>
             </li>
             <li class="nav-item">
-                <a href="ciclo_basico.php" class="nav-link <?php echo ($current_page == 'ciclo_basico.php') ? 'active' : ''; ?>">Ciclo Básico</a>
+                <a href="ciclobasico.php" class="nav-link <?php echo ($current_page == 'ciclobasico.php') ? 'active' : ''; ?>">Ciclo Básico</a>
             </li>
             <li class="nav-item">
                 <a href="informatica.php" class="nav-link <?php echo ($current_page == 'informatica.php') ? 'active' : ''; ?>">Informática</a>
@@ -26,6 +26,9 @@ $current_page = basename($_SERVER['PHP_SELF']);
             </li>
             <li class="nav-item">
                 <a href="noticias.php" class="nav-link <?php echo ($current_page == 'noticias.php') ? 'active' : ''; ?>">Noticias</a>
+            </li>
+            <li class="nav-item">
+                <a href="egresados.php" class="nav-link <?php echo ($current_page == 'egresados.php') ? 'active' : ''; ?>">Egresados</a>
             </li>
         </ul>
     </div>
