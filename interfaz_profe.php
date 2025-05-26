@@ -9,9 +9,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-
-  <!-- HEADER -->
-  <header>
+<!-- HEADER -->
+<header>
     <div class="container header-content asd">
       <div class="logo">
         <img src="imagenes/escudo.png" alt="Logo del Colegio">
@@ -25,8 +24,9 @@
         <img class="logout" src="imagenes/cerrar sesión.png" alt="Cerrar sesión">
       </a>
     </div>
-  </header>
+</header>
 
+<div class="wrapper">
   <!-- SECCIÓN DE TARJETAS -->
   <section class="card-section container">
     <div class="card-grid">
@@ -62,6 +62,7 @@
       <a href="crear_planificacion.php" class="btn-green">Crear un nuevo contenido digital didáctico</a>
     </div>
   </section>
+</div>
 
   <!-- FOOTER -->
   <?php include 'footer.php'; ?>

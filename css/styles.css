@@ -4,9 +4,9 @@
     --primary-color: #0369a1;
     --primary-light: #0ea5e9;
     --primary-dark: #075985;
-    --secondary-color: #512e92;
-    --secondary-light: #7c4fce;
-    --secondary-dark: #1d054b;
+    --secondary-color: #f57c00; /* naranja fuerte */
+    --secondary-light: rgb(255, 239, 218); /* fondo claro */
+    --secondary-dark: #e65100; /* naranja oscuro */
     --text-color: #1e293b;
     --text-muted: #64748b;
     --bg-light: #f8fafc;
@@ -91,7 +91,7 @@ header {
 
 .logo img {
     width: 60px;
-    height: 60px;
+    height: 70px;
     margin-right: 1rem;
 }
 
@@ -616,7 +616,7 @@ header {
 }
 
 .electromecanica .modality-icon {
-    background-color: rgb(227, 211, 255);
+    background-color: var(--secondary-light);
     color: var(--secondary-color);
 }
 
@@ -648,7 +648,7 @@ header {
 }
 
 .electromecanica ul li i {
-    color: var(--secondary-light);
+    color: var(--secondary-color);
     margin-right: 0.5rem;
     font-size: 0.75rem;
 }
