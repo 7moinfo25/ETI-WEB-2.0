@@ -24,9 +24,6 @@
                     <input type="text" placeholder="Buscar..." class="search-input">
                     <button class="search-button"><i class="fas fa-search"></i></button>
                 </div>
-                <div class="mobile-menu">
-                    <button class="menu-button" id="mobile-menu-btn"><i class="fas fa-bars"></i></button>
-                </div>
             </div>
         </div>
     </header>

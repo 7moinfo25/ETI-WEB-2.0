@@ -36,11 +36,11 @@ $current_page = basename($_SERVER['PHP_SELF']);
 </button>
 
 <div id="mobileNavMenu" aria-hidden="true" class="mobile-nav-menu">
-  <a href="#" tabindex="-1">Home</a>
+  <a href="index.php" tabindex="-1">Inicio</a>
   <a href="#" tabindex="-1">Profile</a>
   <a href="#" tabindex="-1">Messages</a>
   <a href="#" tabindex="-1">Settings</a>
-  <a href="#" tabindex="-1">Logout</a>
+  <a href="#" tabindex="-1" id="login-trigger">Iniciar Sesion</a>
 </div>
 
 <div id="overlay" tabindex="-1" class="overlay"></div>

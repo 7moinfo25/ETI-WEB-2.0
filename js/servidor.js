@@ -10,27 +10,6 @@ const button = form.querySelector('button');
 
 let esRegistro = false;
 
-function logina(){
-  esRegistro = !esRegistro;
-  
-  // Actualizar el título del formulario si existe
-  if (formTitle) {
-    formTitle.textContent = esRegistro ? 'Registro de Profesor' : 'Iniciar Sesión';
-  }
-  
-  // Mostrar u ocultar el campo de nombre
-  nombreInput.style.display = esRegistro ? 'block' : 'none';
-  
-  // Actualizar texto del botón
-  button.textContent = esRegistro ? 'Registrarse' : 'Ingresar';
-  
-  // Actualizar el texto del enlace para cambiar entre registro/login
-  toggle.innerHTML = `<p>${esRegistro ? '¿Ya tienes cuenta? Iniciar sesión' : '¿No tienes cuenta? Registrate'}</p>`;
-  
-  // Limpiar mensajes de error/éxito
-  mensaje.textContent = '';
-};
-
 form.addEventListener('submit', async (e) => {
   e.preventDefault();
   const nombre = nombreInput.value.trim();
@@ -67,3 +46,25 @@ form.addEventListener('submit', async (e) => {
     mensaje.style.color = 'red';
   }
 });
+
+function logina(){
+  esRegistro = !esRegistro;
+  
+  // Actualizar el título del formulario si existe
+  if (formTitle) {
+    formTitle.textContent = esRegistro ? 'Registro de Profesor' : 'Iniciar Sesión';
+  }
+  
+  // Mostrar u ocultar el campo de nombre
+  nombreInput.style.display = esRegistro ? 'block' : 'none';
+  
+  // Actualizar texto del botón
+  button.textContent = esRegistro ? 'Registrarse' : 'Ingresar';
+  
+  // Actualizar el texto del enlace para cambiar entre registro/login
+  toggle.innerHTML = `<p>${esRegistro ? '¿Ya tienes cuenta? Iniciar sesión' : '¿No tienes cuenta? Registrate'}</p>`;
+  
+  // Limpiar mensajes de error/éxito
+  mensaje.textContent = '';
+};
+
