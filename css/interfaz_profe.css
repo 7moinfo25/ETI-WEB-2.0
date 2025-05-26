@@ -1,11 +1,11 @@
 /* === Variables Globales === */
 :root {
-  --profe-primary: #a31616;
-  --profe-secondary: #de4a4a;
-  --profe-light: #fae1d1;
-  --profe-dark: #5f0606;
-  --profe-accent: #c52222;
-  --text-muted2: #8b6464;
+  --profe-primary:   #2e8b57;
+  --profe-secondary: #6fbf8f;  
+  --profe-light:     #e0f5ea;  
+  --profe-dark:      #1e5a3d;  
+  --profe-accent:    #3fa37b;  
+  --text-muted2:     #6a8c7a;  
 }
 
 /* === Animaciones === */
@@ -22,16 +22,19 @@
 
 @keyframes pulseBorder {
   0%, 100% {
-    filter: drop-shadow(0 0 0 rgb(255, 0, 0));
+    filter: drop-shadow(0 0 0 var(--profe-primary));
   }
   50% {
-    filter: drop-shadow(0 0 10px rgb(255, 0, 0));
+    filter: drop-shadow(0 0 10px var(--profe-primary));
   }
 }
 
 /* === Estructura Global === */
 body {
   background-color: var(--profe-light);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   margin: 0;
   font-family: sans-serif;
 }
@@ -39,7 +42,7 @@ body {
 /* === Header === */
 header {
   background: linear-gradient(to right, var(--profe-primary), var(--profe-dark));
-  height: 250px;
+  height: 100px;
   position: relative;
   display: flex;
   align-items: center;
@@ -50,21 +53,30 @@ header {
 .header-content {
   position: relative;
   width: 100%;
-  max-width: 1200px;
+  max-width: 100%;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  padding: 0 2rem;
   animation: zoomIn 1s ease forwards;
 }
 
 .logo img {
-  position: absolute;
-  top: 1rem;
-  left: 1rem;
-  height: 80px;
+  width: 60px;
+  height: 70px;
   animation: zoomIn 1s ease forwards;
-  margin-bottom: 1rem;
+  margin-bottom: 0;
+}
+
+.intro-content {
+  flex-grow: 1;
+  text-align: center;
+}
+
+/* El body se proporciona para que el espacio quede bien repartido */ 
+.wrapper {
+  flex-grow: 1; 
 }
 
 .section-header {
@@ -80,9 +92,8 @@ header {
 
 /* === Botón Logout === */
 .logout-link {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
+  display: flex;
+  align-items: flex-end;
 }
 
 .logout {
