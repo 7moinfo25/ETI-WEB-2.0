@@ -3,12 +3,9 @@
     --primary-color: #0369a1;
     --primary-light: #0ea5e9;
     --primary-dark: #075985;
-    --secondary-color: #d97706;
-    --secondary-light: #f59e0b;
-    --secondary-dark: #b45309;
-    --secondary-color: #f57c00; /* naranja fuerte */
-    --secondary-light: rgb(255, 239, 218); /* fondo claro */
-    --secondary-dark: #e65100; /* naranja oscuro */
+    --secondary-color: #512e92;
+    --secondary-light: #7b4fce81;
+    --secondary-dark: #1d054b;
     --text-color: #1e293b;
     --text-muted: #64748b;
     --bg-light: #f8fafc;

@@ -12,15 +12,13 @@
 <!-- HEADER -->
 <header>
     <div class="container header-content asd">
-      <div class="logo">
-        <img src="imagenes/escudo.png" alt="Logo del Colegio">
-      </div>
-
-      <div class="intro-content">
-        <h1 class="section-header">Bienvenido/a Docente</h1>
-      </div>
-
-      <a href="index.php" class="logout-link">
+        <div class="logo">
+          <a href="index.php">
+            <img src="imagenes/escudo.png" alt="Escudo de la Escuela Técnica">
+            <h1>Escuela Técnica N°1</h1>
+          </a>
+        </div>
+        <a href="index.php" class="logout-link">
         <img class="logout" src="imagenes/cerrar sesión.png" alt="Cerrar sesión">
       </a>
     </div>
