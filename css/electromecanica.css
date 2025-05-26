@@ -1,17 +1,9 @@
 :root {
-<<<<<<< HEAD
-    --electromecanica-primary: #d97706;
-    --electromecanica-secondary: #f59e0b;
-    --electromecanica-light: #fef3c7;
-    --electromecanica-dark: #b45309;
-    --electromecanica-accent: #fbbf24;
-=======
     --electromecanica-primary:   #f57c00;
     --electromecanica-secondary: #ffb74d; 
     --electromecanica-light:     rgb(255, 239, 218); 
     --electromecanica-dark:      #e65100; 
     --electromecanica-accent:    #ff9800; 
->>>>>>> e971479881ac45257cc42d36dc8e3f23809a3bd1
 }
 
 /* Header styling with electromecanica theme */
