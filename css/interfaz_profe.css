@@ -42,24 +42,8 @@ body {
 /* === Header === */
 header {
   background: linear-gradient(to right, var(--profe-primary), var(--profe-dark));
-  height: 100px;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-
-.header-content {
-  position: relative;
-  width: 100%;
-  max-width: 100%;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 2rem;
-  animation: zoomIn 1s ease forwards;
+    color: white;
+    text-align: left;
 }
 
 .logo img {
@@ -67,12 +51,7 @@ header {
   height: 70px;
   animation: zoomIn 1s ease forwards;
   margin-bottom: 0;
-}
-
-.intro-content {
-  flex-grow: 1;
-  text-align: center;
-}
+  }
 
 /* El body se proporciona para que el espacio quede bien repartido */ 
 .wrapper {
@@ -170,6 +149,7 @@ header {
   background-color: var(--profe-accent);
   transform: scale(1.05);
   animation: pulseBorder 1.5s infinite;
+  color: white;
 }
 
 /* === Footer === */
