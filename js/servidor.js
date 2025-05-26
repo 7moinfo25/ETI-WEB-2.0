@@ -55,7 +55,7 @@ form.addEventListener('submit', async (e) => {
 
       if (!esRegistro) {
         localStorage.setItem('token', data.token);
-        window.location.href = 'panel.html';
+        window.location.href = 'interfazProfe.php';
       }
     } else {
       mensaje.textContent = data.message || 'Ocurrió un error.';
