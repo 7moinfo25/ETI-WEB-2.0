@@ -20,7 +20,8 @@ function logina(){
   
   // Mostrar u ocultar el campo de nombre
   nombreInput.style.display = esRegistro ? 'block' : 'none';
-  
+  // 👈 ESTA LÍNEA ES LA CLAVE
+  nombreInput.required = esRegistro;
   // Actualizar texto del botón
   button.textContent = esRegistro ? 'Registrarse' : 'Ingresar';
   
@@ -67,3 +68,4 @@ form.addEventListener('submit', async (e) => {
     mensaje.style.color = 'red';
   }
 });
+

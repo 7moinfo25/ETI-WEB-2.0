@@ -27,7 +27,7 @@
                 <p>Ingrese sus credenciales para acceder al panel</p>
             </div>
             <form id="auth-form">
-                <input type="text" id="nombre" placeholder="Nombre" required style="display: none;">
+                <input type="text" id="nombre" placeholder="Nombre" style="display: none;">
                 <input type="email" id="email" placeholder="Email" required>
                 <input type="password" id="password" placeholder="Contraseña" required>
                 <button type="submit">Ingresar</button>
