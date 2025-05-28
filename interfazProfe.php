@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/interfaz_profe.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="icon" href="imagenes/escudo.png" type="image/png">
 </head>
 <body>
 <!-- HEADER -->
@@ -57,7 +58,7 @@
     </div>
 
     <div class="cta-container">
-      <a href="crear_planificacion.php" class="btn-green">Crear un nuevo contenido digital didáctico</a>
+      <a href="formularioProfes.html" class="btn-green">Crear un nuevo contenido digital didáctico</a>
     </div>
   </section>
 </div>
