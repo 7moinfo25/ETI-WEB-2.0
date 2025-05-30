@@ -37,10 +37,10 @@ $current_page = basename($_SERVER['PHP_SELF']);
 
 <div id="mobileNavMenu" aria-hidden="true" class="mobile-nav-menu">
   <a href="index.php" tabindex="-1">Inicio</a>
-  <a href="#" tabindex="-1">Profile</a>
-  <a href="#" tabindex="-1">Messages</a>
-  <a href="#" tabindex="-1">Settings</a>
-  <a href="#" tabindex="-1" id="login-trigger">Iniciar Sesion</a>
+  <a href="ciclo_basico.php" tabindex="-1">Ciclo Básico</a>
+  <a href="informatica.php" tabindex="-1">Informática</a>
+  <a href="electromecanica.php" tabindex="-1">Electromecánica</a>
+  <a href="noticias.php" tabindex="-1">Noticias</a>
 </div>
 
 <div id="overlay" tabindex="-1" class="overlay"></div>
