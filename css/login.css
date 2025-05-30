@@ -203,152 +203,236 @@
     transition: all 0.3s ease;
 }
 
-.login-modal.active {
+.login-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
     opacity: 1;
-    visibility: visible;
+    transition: all 0.3s ease;
 }
 
+.login-modal.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* Contenedor principal */
 .login-container {
-    background-color: white;
-    border-radius: 8px;
-    width: 90%;
-    max-width: 400px;
-    padding: 30px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 40px;
+    width: 100%;
+    max-width: 450px;
     position: relative;
-    transform: translateY(-20px);
-    transition: transform 0.3s ease;
-}
-
-.login-modal.active .login-container {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     transform: translateY(0);
+    transition: all 0.3s ease;
 }
 
+.login-modal.hidden .login-container {
+    transform: translateY(-50px);
+}
+
+/* Botón de cerrar */
 .close-btn {
     position: absolute;
     top: 15px;
     right: 15px;
     background: none;
     border: none;
-    font-size: 20px;
-    color: #64748b;
+    font-size: 24px;
+    color: #666;
     cursor: pointer;
-    transition: color 0.3s ease;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
 }
 
 .close-btn:hover {
-    color: #20b5bf;
+    background: rgba(0, 0, 0, 0.1);
+    color: #333;
+    transform: rotate(90deg);
 }
 
+/* Encabezado */
 .login-header {
     text-align: center;
-    margin-bottom: 25px;
+    margin-bottom: 30px;
 }
 
 .login-header h2 {
-    color: #20b5bf;
-    margin-bottom: 10px;
+    color: #333;
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .login-header p {
-    color: #64748b;
-    font-size: 14px;
-}
-
-.form-group {
-    margin-bottom: 20px;
-    position: relative;
-}
-
-.form-group label {
-    position: absolute;
-    left: 15px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #64748b;
-}
-
-.form-group input[type="text"],
-.form-group input[type="password"] {
-    width: 100%;
-    padding: 12px 12px 12px 40px;
-    border: 1px solid #e2e8f0;
-    border-radius: 4px;
+    color: #666;
     font-size: 16px;
-    transition: border-color 0.3s ease;
+    font-weight: 400;
 }
 
-.form-group input:focus {
-    outline: none;
-    border-color: #20b5bf;
-}
-
-.remember-me {
+/* Formulario */
+#auth-form {
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    gap: 20px;
 }
 
-.remember-me input {
-    margin-right: 8px;
-}
-
-.remember-me label {
-    position: static;
-    transform: none;
-    color: #1e293b;
-    font-size: 14px;
-}
-
-.login-btn {
+/* Inputs */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
     width: 100%;
-    padding: 12px;
-    background-color: #20b5bf;
-    color: white;
+    padding: 15px 20px;
+    border: 2px solid #e1e5e9;
+    border-radius: 12px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.9);
+    color: #333;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    transform: translateY(-2px);
+}
+
+input::placeholder {
+    color: #999;
+    font-weight: 400;
+}
+
+/* Botón principal */
+button[type="submit"] {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
     border: none;
-    border-radius: 4px;
+    border-radius: 12px;
+    color: white;
     font-size: 16px;
     font-weight: 600;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
 }
 
-.login-btn:hover {
-    background-color: #1a9aa3;
+button[type="submit"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
 }
 
-.forgot-password {
+button[type="submit"]:active {
+    transform: translateY(0);
+}
+
+/* Switch de formulario */
+.switch {
+    text-align: center;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.switch p {
+    color: #667eea;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.switch:hover p {
+    background: rgba(102, 126, 234, 0.1);
+    color: #764ba2;
+}
+
+/* Mensaje */
+#mensaje {
     text-align: center;
     margin-top: 15px;
-}
-
-.forgot-password a {
-    color: #20b5bf;
+    padding: 10px;
+    border-radius: 8px;
     font-size: 14px;
-    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
 }
 
-.forgot-password a:hover {
-    text-decoration: underline;
+#mensaje.error {
+    background: rgba(255, 99, 99, 0.1);
+    color: #ff6363;
+    border: 1px solid rgba(255, 99, 99, 0.2);
 }
 
-/* Responsive adjustments */
+#mensaje.success {
+    background: rgba(72, 187, 120, 0.1);
+    color: #48bb78;
+    border: 1px solid rgba(72, 187, 120, 0.2);
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.login-container {
+    animation: fadeIn 0.4s ease-out;
+}
+
+/* Responsive */
 @media (max-width: 768px) {
-    .corner-fold {
-        width: 80px;
-        height: 80px;
+    .login-container {
+        margin: 20px;
+        padding: 30px 25px;
+        max-width: none;
     }
     
-    .corner-fold:hover .fold {
-        border-width: 0 80px 80px 0;
+    .login-header h2 {
+        font-size: 24px;
     }
     
-    .login-icon {
-        top: 12px;
-        right: 12px;
-        font-size: 20px;
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+        padding: 12px 16px;
+        font-size: 16px;
+    }
+    
+    button[type="submit"] {
+        padding: 12px;
+        font-size: 16px;
     }
 }
-
 /* Folded Corner Styles */
 .folded-corner {
     position: fixed;
