@@ -1,4 +1,3 @@
-// server/routes/files.js
 const express = require('express');
 const multer = require('multer');
 const path = require('path');
@@ -8,7 +7,7 @@ const File = require('../models/File');
 
 const router = express.Router();
 
-// Middleware para verificar token JWT
+// verificacion token JWT
 const authenticateToken = (req, res, next) => {
   const authHeader = req.headers['authorization'];
   const token = authHeader && authHeader.split(' ')[1];
@@ -26,27 +25,34 @@ const authenticateToken = (req, res, next) => {
   });
 };
 
-// Configuración de multer para el almacenamiento de archivos
+// configuración de multer para el almacenamiento de archivos
 const storage = multer.diskStorage({
   destination: async (req, file, cb) => {
-    const uploadPath = path.join(__dirname, '../uploads');
-    
+    // Extraemos los campos desde los valores del form-data manualmente usando un "parser auxiliar"
+    const busboyBodyParser = require('busboy-body-parser');
+    await busboyBodyParser(req);
+
+    const categoria = req.body.category || 'otros';
+    const anio = req.body.año || 'sin_año';
+
+    const uploadPath = path.join(__dirname, '../uploads', categoria, anio);
     try {
-      await fs.access(uploadPath);
-    } catch {
       await fs.mkdir(uploadPath, { recursive: true });
+      cb(null, uploadPath);
+    } catch (err) {
+      cb(err);
     }
-    
-    cb(null, uploadPath);
   },
+
   filename: (req, file, cb) => {
-    // Generar nombre único para el archivo
-    const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
+    const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1e9);
     const extension = path.extname(file.originalname);
     const filename = `${uniqueSuffix}${extension}`;
     cb(null, filename);
   }
 });
+
+
 
 // Filtro para tipos de archivo permitidos
 const fileFilter = (req, file, cb) => {
@@ -102,8 +108,7 @@ router.post('/upload', authenticateToken, upload.single('file'), async (req, res
 
     const { description, category } = req.body;
 
-    // Crea registro en la db
-    console.log('Categoría recibida:', req.body.category); //eliminar despues
+    // crea registro en la db
     const newFile = new File({
       filename: req.file.filename,
       originalName: req.file.originalname,

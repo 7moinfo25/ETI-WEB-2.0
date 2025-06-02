@@ -7,7 +7,6 @@ const fileSchema = new Schema({
   size: { type: Number, required: true},
   path: { type: String, required: true},
   description: { type: String, default: ''},
-  /*categoy enum viejo: 'contenido_didactico','evaluaciones','asistencias','presentaciones','documentos','imagenes','general' */
   category: { type: String, enum: ['matematicas','lengua','ciencias','historia','geografia','fisica','quimica','biologia','informatica','tecnologia','ingles','educacion_fisica','arte','musica','general'], default: 'general'},
   professorId: { type: Schema.Types.ObjectId, ref: 'Professor', required: true},
   professorName: { type: String, required: true},

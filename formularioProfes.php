@@ -31,7 +31,7 @@
           <p>Completa los datos para agregar un nuevo contenido digital didáctico</p>
         </div>
 
-        <form id="uploadForm" enctype="multipart/form-data">
+        <form id="uploadForm" method="POST" action="http://localhost:3000/api/upload" enctype="multipart/form-data">
           <div class="form-row">
             <div class="form-group">
               <label for="nombreTarea">
@@ -45,7 +45,7 @@
               <label for="materia">
                 <i class="fas fa-book"></i> Materia *
               </label>
-              <select id="materia" name="materia" required>
+              <select name="category" id="materia" required>
                 <option value="">Seleccionar materia</option>
                 <option value="matematicas">Matemáticas</option>
                 <option value="lengua">Lengua y Literatura</option>
@@ -71,7 +71,7 @@
               <label for="año">
                 <i class="fas fa-calendar-alt"></i> Año *
               </label>
-              <select id="año" name="año" required>
+              <select name="año" id="año" required>
                 <option value="">Seleccionar año</option>
                 <option value="1">1° Año</option>
                 <option value="2">2° Año</option>
@@ -89,7 +89,7 @@
                 <i class="fas fa-file-upload"></i> Archivo *
               </label>
               <div class="file-input-container">
-                <input type="file" id="archivo" name="archivo" class="file-input" required accept=".pdf,.doc,.docx,.ppt,.pptx,.xls,.xlsx,.txt,.jpg,.jpeg,.png,.gif,.mp4,.avi,.mp3,.wav">
+                <input type="file" id="archivo" name="file" class="file-input" required accept=".pdf,.doc,.docx,.ppt,.pptx,.xls,.xlsx,.txt,.jpg,.jpeg,.png,.gif,.mp4,.avi,.mp3,.wav">
                 <label for="archivo" class="file-label">
                   <i class="fas fa-cloud-upload-alt"></i>
                   <span>Seleccionar archivo</span>
@@ -151,6 +151,8 @@
     formData.append('file', document.getElementById('archivo').files[0]);
     formData.append('description', document.getElementById('descripcion').value);
     formData.append('category', document.getElementById('materia').value);
+    formData.append('year', document.getElementById('año').value);
+    formData.append('taskName', document.getElementById('nombreTarea').value);
 
     const token = localStorage.getItem('token');
     const mensaje = document.getElementById('mensaje');

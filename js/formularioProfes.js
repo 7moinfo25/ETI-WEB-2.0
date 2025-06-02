@@ -1,4 +1,4 @@
-//pone año
+    //pone año
     document.getElementById('current-year').textContent = new Date().getFullYear();
 
     // Manejo del selector de archivos
