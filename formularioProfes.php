@@ -9,7 +9,6 @@
   <link rel="icon" href="imagenes/escudo.png" type="image/png">
 </head>
 <body>
-  <!-- HEADER -->
   <header>
     <div class="container header-content">
       <div class="logo">
@@ -25,7 +24,6 @@
   </header>
 
   <div class="wrapper">
-    <!-- SECCIÓN DEL FORMULARIO -->
     <section class="form-section container">
       <div class="form-container">
         <div class="form-header">
@@ -121,17 +119,77 @@
             </a>
           </div>
         </form>
+
+        <div id="mensaje" style="margin-top: 15px;"></div>
       </div>
     </section>
   </div>
 
-  <!-- FOOTER -->
   <footer>
     <div class="container">
       <p>&copy; <span id="current-year"></span> Escuela Técnica N°1. Todos los derechos reservados.</p>
     </div>
   </footer>
 
-<script src="js/formularioProfes.js"></script>
+<script>
+  // Mostrar nombre del archivo seleccionado
+  const archivoInput = document.getElementById('archivo');
+  const fileInfo = document.getElementById('fileInfo');
+  archivoInput.addEventListener('change', function () {
+    if (this.files.length > 0) {
+      fileInfo.textContent = this.files[0].name;
+    } else {
+      fileInfo.textContent = '';
+    }
+  });
+
+  // Envío del formulario al backend en Node.js
+  document.getElementById('uploadForm').addEventListener('submit', async function (e) {
+    e.preventDefault();
+
+    const formData = new FormData();
+    formData.append('file', document.getElementById('archivo').files[0]);
+    formData.append('description', document.getElementById('descripcion').value);
+    formData.append('category', document.getElementById('materia').value);
+
+    const token = localStorage.getItem('token');
+    const mensaje = document.getElementById('mensaje');
+
+    if (!token) {
+      mensaje.innerText = 'Debe iniciar sesión para subir archivos.';
+      return;
+    }
+
+    try {
+      const response = await fetch('http://localhost:3000/api/upload', {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${token}`
+        },
+        body: formData
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        mensaje.style.color = 'green';
+        mensaje.innerText = 'Archivo subido exitosamente.';
+        this.reset();
+        fileInfo.innerText = '';
+      } else {
+        mensaje.style.color = 'red';
+        mensaje.innerText = 'Error: ' + (result.message || 'Subida fallida.');
+      }
+    } catch (error) {
+      console.error(error);
+      mensaje.style.color = 'red';
+      mensaje.innerText = 'Error al conectar con el servidor.';
+    }
+  });
+
+  // Año dinámico en el footer
+  document.getElementById('current-year').textContent = new Date().getFullYear();
+</script>
+
 </body>
 </html>

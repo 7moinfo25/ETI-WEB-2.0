@@ -58,7 +58,7 @@
     </div>
 
     <div class="cta-container">
-      <a href="formularioProfes.html" class="btn-green">Crear un nuevo contenido digital didáctico</a>
+      <a href="formularioProfes.php" class="btn-green">Crear un nuevo contenido digital didáctico</a>
     </div>
   </section>
 </div>

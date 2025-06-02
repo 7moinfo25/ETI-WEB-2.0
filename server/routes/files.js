@@ -102,7 +102,8 @@ router.post('/upload', authenticateToken, upload.single('file'), async (req, res
 
     const { description, category } = req.body;
 
-    // Crear registro en la base de datos
+    // Crea registro en la db
+    console.log('Categoría recibida:', req.body.category); //eliminar despues
     const newFile = new File({
       filename: req.file.filename,
       originalName: req.file.originalname,
