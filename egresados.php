@@ -146,131 +146,131 @@
         </div>
         <div class="swiper-wrapper">
             <div class="swiper-slide">
-                <img src="imagenes/egresados/1971.jpg" alt="1971">
+                <img src="imagenes/egresados/1971.webp" alt="1971">
                 <div class="caption">1971<br></div>
             </div>
             <div class="swiper-slide">
-                <img src="imagenes/egresados/1972.jpg" alt="1972">
+                <img src="imagenes/egresados/1972.webp" alt="1972">
                 <div class="caption">1972<br></div>
             </div>
             <div class="swiper-slide">
-                <img src="imagenes/egresados/1973.jpg" alt="1973">
+                <img src="imagenes/egresados/1973.webp" alt="1973">
                 <div class="caption">1973<br></div>
             </div>
             <div class="swiper-slide">
-                <img src="imagenes/egresados/1974.jpg" alt="1974">
+                <img src="imagenes/egresados/1974.webp" alt="1974">
                 <div class="caption">1974<br></div>
             </div>
             <div class="swiper-slide">
-                <img src="imagenes/egresados/1975.jpg" alt="1975">
+                <img src="imagenes/egresados/1975.webp" alt="1975">
                 <div class="caption">1975<br></div>
             </div>
             <div class="swiper-slide">
-                <img src="imagenes/egresados/1976.jpg" alt="1976">
+                <img src="imagenes/egresados/1976.webp" alt="1976">
                 <div class="caption">1976<br></div>
             </div>
             <div class="swiper-slide">
-                <img src="imagenes/egresados/1977.jpg" alt="1977">
+                <img src="imagenes/egresados/1977.webp" alt="1977">
                 <div class="caption">1977<br></div>
             </div>
             <div class="swiper-slide">
-                <img src="imagenes/egresados/1979.jpg" alt="1979">
+                <img src="imagenes/egresados/1979.webp" alt="1979">
                 <div class="caption">1979<br></div>
             </div>
             <div class="swiper-slide">
-                <img src="imagenes/egresados/1983.jpg" alt="1983">
+                <img src="imagenes/egresados/1983.webp" alt="1983">
                 <div class="caption">1983<br></div>
             </div>
             <div class="swiper-slide">
-                <img src="imagenes/egresados/1985.jpg" alt="1985">
+                <img src="imagenes/egresados/1985.webp" alt="1985">
                 <div class="caption">1985<br></div>
             </div>
             <div class="swiper-slide">
-                <img src="imagenes/egresados/1986.jpg" alt="1986">
+                <img src="imagenes/egresados/1986.webp" alt="1986">
                 <div class="caption">1986<br></div>
             </div>
             <div class="swiper-slide">
-                <img src="imagenes/egresados/1987.jpg" alt="1987">
+                <img src="imagenes/egresados/1987.webp" alt="1987">
                 <div class="caption">1987<br></div>
             </div>
             <div class="swiper-slide">
-                <img src="imagenes/egresados/1989.jpg" alt="1989">
+                <img src="imagenes/egresados/1989.webp" alt="1989">
                 <div class="caption">1989<br></div>
             </div>
             <div class="swiper-slide">
-                <img src="imagenes/egresados/1995.jpg" alt="1995">
+                <img src="imagenes/egresados/1995.webp" alt="1995">
                 <div class="caption">1995<br></div>
             </div>
             <div class="swiper-slide">
-                <img src="imagenes/egresados/1997.jpg" alt="1997">
+                <img src="imagenes/egresados/1997.webp" alt="1997">
                 <div class="caption">1997<br></div>
             </div>
             <div class="swiper-slide">
-                <img src="imagenes/egresados/1999.jpg" alt="1999">
+                <img src="imagenes/egresados/1999.webp" alt="1999">
                 <div class="caption">1999<br></div>
             </div>
             <div class="swiper-slide">
-                <img src="imagenes/egresados/2001.jpg" alt="2001">
+                <img src="imagenes/egresados/2001.webp" alt="2001">
                 <div class="caption">2001<br><br></div>
             </div>
             <div class="swiper-slide">
-                <img src="imagenes/egresados/2001a.jpg" alt="2001">
+                <img src="imagenes/egresados/2001a.webp" alt="2001">
                 <div class="caption">2001<br><br></div>
             </div>
             <div class="swiper-slide">
-                <img src="imagenes/egresados/2002.jpg" alt="2002">
+                <img src="imagenes/egresados/2002.webp" alt="2002">
                 <div class="caption">2002<br></div>
             </div>
             <div class="swiper-slide">
-                <img src="imagenes/egresados/2003.jpg" alt="2003">
+                <img src="imagenes/egresados/2003.webp" alt="2003">
                 <div class="caption">2003<br></div>
             </div>
             <div class="swiper-slide">
-                <img src="imagenes/egresados/2004.jpg" alt="2004">
+                <img src="imagenes/egresados/2004.webp" alt="2004">
                 <div class="caption">2004<br></div>
             </div>
             <div class="swiper-slide">
-                <img src="imagenes/egresados/2005.jpg" alt="2005">
+                <img src="imagenes/egresados/2005.webp" alt="2005">
                 <div class="caption">2005<br></div>
             </div>
             <div class="swiper-slide">
-                <img src="imagenes/egresados/2006.jpg" alt="2006">
+                <img src="imagenes/egresados/2006.webp" alt="2006">
                 <div class="caption">2006<br></div>
             </div>
             <div class="swiper-slide">
-                <img src="imagenes/egresados/2007.jpg" alt="2007">
+                <img src="imagenes/egresados/2007.webp" alt="2007">
                 <div class="caption">2007<br></div>
             </div>
             <div class="swiper-slide">
-                <img src="imagenes/egresados/2008.jpg" alt="2008">
+                <img src="imagenes/egresados/2008.webp" alt="2008">
                 <div class="caption">2008<br></div>
             </div>
             <div class="swiper-slide">
-                <img src="imagenes/egresados/2009.jpg" alt="2009">
+                <img src="imagenes/egresados/2009.webp" alt="2009">
                 <div class="caption">2009<br></div>
             </div>
             <div class="swiper-slide">
-                <img src="imagenes/egresados/2011.jpg" alt="2011">
+                <img src="imagenes/egresados/2011.webp" alt="2011">
                 <div class="caption">2011<br></div>
             </div>
             <div class="swiper-slide">
-                <img src="imagenes/egresados/2012.jpg" alt="2012">
+                <img src="imagenes/egresados/2012.webp" alt="2012">
                 <div class="caption">2012<br></div>
             </div>
             <div class="swiper-slide">
-                <img src="imagenes/egresados/2014.jpg" alt="2014">
+                <img src="imagenes/egresados/2014.webp" alt="2014">
                 <div class="caption">2014<br></div>
             </div>
             <div class="swiper-slide">
-                <img src="imagenes/egresados/2015.jpg" alt="2015">
+                <img src="imagenes/egresados/2015.webp" alt="2015">
                 <div class="caption">2015<br></div>
             </div>
             <div class="swiper-slide">
-                <img src="imagenes/egresados/2017.jpg" alt="2017">
+                <img src="imagenes/egresados/2017.webp" alt="2017">
                 <div class="caption">2017<br></div>
             </div>
             <div class="swiper-slide">
-                <img src="imagenes/egresados/2021.jpg" alt="2021">
+                <img src="imagenes/egresados/2021.webp" alt="2021">
                 <div class="caption">2021<br></div>
             </div>
         </div>
