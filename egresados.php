@@ -6,115 +6,10 @@
     <title>Egresados - Escuela Técnica</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/egresados.css">
-    <link rel="icon" href="imagenes/egresados/escudo.png" type="image/png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="imagenes/escudo.png" type="image/png">
     <!-- Swiper CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
-
-    <style>
-        
-.swiper.mySwiper {
-  position: relative;
-  z-index: 0;
-  overflow: hidden;
-}
-
-.swiper.mySwiper::before,
-.swiper.mySwiper::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 10%;
-  z-index: 2;
-  pointer-events: none;
-}
-
-.swiper.mySwiper::before {
-  left: 0;
-  background: linear-gradient(to right, white, transparent);
-}
-
-.swiper.mySwiper::after {
-  right: 0;
-  background: linear-gradient(to left, white, transparent);
-}
-
-
-
-
-  .swiper {
-    width: 100%;
-    max-width: 900px;
-    padding-top: 50px;
-    padding-bottom: 50px;
-    margin: auto;
-    margin-top: 3px;
-    margin-bottom: 3px;
-  }
-
-  .swiper-slide {
-    background: #fff;
-    border-radius: 10px;
-    text-align: center;
-    transition: transform 0.3s;
-    width: 80%;
-    height: 60%;
-    :
-  }
-
-  .swiper-slide img {
-    display: block;
-    width: 100%;
-    border-radius: 10px;
-  }
-
-  .caption {
-    margin-top: 8px;
-    font-weight: bold;
-  }
-.search-container-sw {
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 30px;
-  margin-top: -20px;
-}
-
-.search-input-sw {
-    color: #0ea5e9;  
-  padding: 8px 12px;
-  border: 1px solid #075985;
-  border-radius: 5px;
-  font-size: 16px;
-  width: 250px;
-}
-
-.search-input-sw::placeholder {
-  color:rgba(14, 164, 233, 0.47); 
-}
-
-
-.search-button-sw {
-  padding: 8px 12px;
-  background-color: #075985;
-  color: white;
-  border: 2px solid #075985;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.search-button:hover {
-  background-color: #0ea5e9;
-}
-
-
-</style>
-
-
 </head>
 <body>
     <header>
@@ -129,9 +24,6 @@
                 <div class="search-container">
                     <input type="text" placeholder="Buscar..." class="search-input">
                     <button class="search-button"><i class="fas fa-search"></i></button>
-                </div>
-                <div class="mobile-menu">
-                    <button class="menu-button" id="mobile-menu-btn"><i class="fas fa-bars"></i></button>
                 </div>
             </div>
         </div>
@@ -323,12 +215,20 @@
       return;
     }
   }
-  alert('No se encontró ninguna coincidencia.');
+  showPopupMessage('No se encontró ninguna coincidencia.');
+}
+
+function showPopupMessage(message) {
+  const popup = document.getElementById('popupMessage');
+  popup.textContent = message;
+  popup.classList.add('show');
+
+  setTimeout(() => {
+    popup.classList.remove('show');
+  }, 2500); // se oculta después de 2.5 segundos
 }
 
 </script>
-
-
-</body>
+<div id="popupMessage" class="popup-message"></div>
 </body>
 </html>
