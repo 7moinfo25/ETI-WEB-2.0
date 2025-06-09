@@ -11,7 +11,7 @@
                     <li><a href="index.php">Inicio</a></li>
                     <li><a href="#">Ciclo Básico</a></li>
                     <li><a href="#">Ciclo Superior</a></li>
-                    <li><a href="#">Horarios</a></li>
+                    <li><a href="horarios.php">Horarios</a></li>
                     <li><a href="#">Acuerdo de convivencia</a></li>
                 </ul>
             </div>

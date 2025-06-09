@@ -28,7 +28,7 @@
             </div>
         </div>
     </header>
-    </header>
+    
     <?php include 'header.php'; ?>
 
     <div class="swiper mySwiper ">
