@@ -37,6 +37,7 @@ header {
 
 /* Introduction section */
 .intro-section {
+    margin-top: 5px;
     background: linear-gradient(to right, var(--electromecanica-dark), var(--electromecanica-primary));
     color: white;
     padding: 3rem 0;

@@ -256,9 +256,6 @@
                         <li><i class="fas fa-check-circle"></i> Supervisión de líneas de producción</li>
                         <li><i class="fas fa-check-circle"></i> Gestión de proyectos electromecánicos</li>
                     </ul>
-                    <div class="cta-container">
-                        <a href="#" class="btn btn-amber">Solicitar más información</a>
-                    </div>
                 </div>
             </section>
         </div>

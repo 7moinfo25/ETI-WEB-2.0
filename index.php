@@ -46,7 +46,7 @@
                         <h1>Bienvenidos a nuestra <br> Escuela Técnica <br> Gral. Manuel Belgrano</h1>
                         <p>Formando profesionales con excelencia académica y valores humanos para construir un futuro mejor.</p>
                         <div class="button-group">
-                            <button class="btn btn-primary">Conoce más sobre nosotros</button>
+                            <a href="conocemas.php"><button class="btn btn-primary">Conoce más sobre nosotros</button></a>
                             <a href="#redirect-contacto"><button class="btn btn-outline">Contacto</button></a>
                         </div>
                     </div>

@@ -202,9 +202,6 @@
                         <li><i class="fas fa-check-circle"></i> Gestión de bases de datos</li>
                         <li><i class="fas fa-check-circle"></i> Diseño y desarrollo web</li>
                     </ul>
-                    <div class="cta-container">
-                        <a href="#" class="btn btn-blue">Solicitar más información</a>
-                    </div>
                 </div>
             </section>
         </div>
