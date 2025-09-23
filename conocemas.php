@@ -83,7 +83,7 @@
                 Nuestra escuela es el fruto del trabajo mancomunado de generaciones de vecinos, familias, docentes y estudiantes que apostaron a la educación técnica como motor de desarrollo. Hoy seguimos ese mismo legado, formando jóvenes con valores, conocimientos y la capacidad de construir el futuro de nuestra comunidad.
             </p>
         </section>
-    </main>
+    </main> 
     <?php include 'footer.php'; ?>
 </body>
 </html>

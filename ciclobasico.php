@@ -42,7 +42,7 @@
                 </div>
                 <div class="intro-content">
                     <p>El ciclo básico de la Escuela de Educación Secundaria Técnica N°1 Gral. Manuel Belgrano abarca de primer a tercer año y marca el inicio de la formación técnica. En esta etapa los estudiantes se adaptan a la vida escolar con jornadas de hasta 8 horas diarias, aprendiendo a organizarse, trabajar en equipo e integrarse a la comunidad educativa.</p>
-                    <p>Los talleres son un pilar fundamental, ya que permiten explorar áreas como carpintería, hojalatería, electricidad, dibujo técnico y lenguaje informático. De esta manera, los alumnos adquieren una base sólida de conocimientos y experiencias que los preparan para elegir con seguridad su especialidad en el ciclo superior.</p>
+                    <p>Los talleres son un pilar fundamental, ya que permiten explorar áreas como carpintería, hojalatería, electricidad, dibujo técnico y lenguaje tecnológico. De esta manera, los alumnos adquieren una base sólida de conocimientos y experiencias que los preparan para elegir con seguridad su especialidad en el ciclo superior.</p>
                 </div>
             </section>
 
@@ -56,66 +56,77 @@
                     <!-- Subject 1 -->
                     <div class="subject-card">
                         <div class="subject-image">
-                            <img src="imagenes\informatica\seguridad-informatica.png" alt="Seguridad Informática">
+                            <img src="imagenes\ciclobasico\carpinteria.jpg" alt="Carpintería">
                         </div>
                         <div class="subject-content">
-                            <h3>Seguridad Informática</h3>
-                            <p>Nos centramos en proteger sistemas, redes y datos contra ataques y accesos no autorizados. Esto incluye medidas como usar contraseñas seguras, actualizar software regularmente, usar antivirus, firewall y educar a los usuarios sobre prácticas seguras en línea.</p>
+                            <h3>Carpintería</h3>
+                            <p>El taller de carpintería es un espacio de aprendizaje práctico donde los alumnos transforman la madera en proyectos reales. Aquí se aprende a diseñar, medir y utilizar herramientas con precisión y seguridad. El profesor es el guía que enseña las técnicas correctas, supervisa la seguridad, asegurando que cada error se convierta en una valiosa lección.</p>
                         </div>
                     </div>
 
                     <!-- Subject 2 -->
                     <div class="subject-card">
                         <div class="subject-image">
-                            <img src="imagenes\informatica\imagen-Sistemas.Digitales.jpg" alt="Sistemas Digitales">
+                            <img src="imagenes\ciclobasico\hojalateria.png" alt="Hojalatería">
                         </div>
                         <div class="subject-content">
-                            <h3>Sistemas Digitales</h3>
-                            <p>Materia fundamental en la electrónica y la informática, permitiendo la creación de dispositivos como computadoras, teléfonos inteligentes y sistemas embebidos. Se basan en principios como la lógica digital, que maneja circuitos que realizan operaciones lógicas y aritméticas.</p>
+                            <h3>Hojalatería</h3>
+                            <p>El taller de hojalatería es un entorno de aprendizaje dinámico donde los alumnos le dan forma al metal. Es el lugar donde se aprende a transformar láminas de chapa en piezas funcionales mediante técnicas precisas de trazado, corte, plegado y unión. Los proyectos desarrollan la habilidad para interpretar planos y la destreza en el manejo de herramientas específicas.</p>
                         </div>
                     </div>
 
                     <!-- Subject 3 -->
                     <div class="subject-card">
                         <div class="subject-image">
-                            <img src="imagenes\informatica\imagen-sistemas operativos.jpg" alt="Laboratorio de Sistemas Operativos">
+                            <img src="imagenes\ciclobasico\herreria.jpg" alt="Herrería">
                         </div>
                         <div class="subject-content">
-                            <h3>Laboratorio de Sistemas Operativos</h3>
-                            <p>Es un entorno donde se estudian y realizan pruebas prácticas relacionadas con el desarrollo, la implementación y el mantenimiento de sistemas operativos. Los estudiantes aprenden sobre la gestión de recursos del sistema, la administración de memoria, la planificación de procesos y la interacción con dispositivos de hardware.</p>
+                            <h3>Herrería</h3>
+                            <p>El taller de herrería es un lugar para la fuerza y la precisión. Los alumnos aprenden a dominar el arte de forjar y unir metales pesados, adquiriendo habilidades en soldadura avanzada y el manejo de herramientas de gran tamaño. Una pieza terminada es la materialización de la habilidad, seguridad e ingenio, preparando a los estudiantes para trabajos de c onstrucción a gran escala.</p>
                         </div>
                     </div>
 
                     <!-- Subject 4 -->
                     <div class="subject-card">
                         <div class="subject-image">
-                            <img src="imagenes\informatica\imagen-hardware.webp" alt="Laboratorio de Hardware">
+                            <img src="imagenes\ciclobasico\vitrofusion.png" alt="Vitrofusión">
                         </div>
                         <div class="subject-content">
-                            <h3>Laboratorio de Hardware</h3>
-                            <p>Entendimiento y composición de los componentes físicos de un sistema informático o electrónico. Esto incluye desde los circuitos integrados y placas de circuito en dispositivos electrónicos hasta periféricos como teclados y monitores en computadoras.</p>
+                            <h3>Vitrofusión</h3>
+                            <p>El taller de vitrofusión es un espacio de arte y ciencia donde los alumnos transforman vidrio en piezas únicas, usando calor para fusionarlo. Se adquieren habilidades de diseño y corte de vidrio, y el control del horno para lograr acabados específicos. Cada pieza terminada, ya sea decorativa o funcional, demuestra la creatividad, la paciencia y la precisión, preparando a los estudiantes en el trabajo artístico y artesanal.</p>
                         </div>
                     </div>
 
                     <!-- Subject 5 -->
                     <div class="subject-card">
                         <div class="subject-image">
-                            <img src="imagenes\informatica\imagen-Programación.jpg" alt="Laboratorio de Programación">
+                            <img src="imagenes\ciclobasico\soldadura de estaño.jpg" alt="Electricidad">
                         </div>
                         <div class="subject-content">
-                            <h3>Laboratorio de Programación</h3>
-                            <p>Es un espacio dedicado al aprendizaje y la práctica de la programación informática. En este entorno, los estudiantes pueden experimentar con diferentes lenguajes de programación, resolver problemas algorítmicos, desarrollar aplicaciones y mejorar sus habilidades en la escritura de código eficiente y mantenible.</p>
+                            <h3>Electricidad</h3>
+                            <p>El taller de electricidad es un lugar de precisión y conocimiento. Aquí, los alumnos aprenden a manipular circuitos y componentes, usando estaño para soldar. Se adquieren habilidades en diagnóstico de fallas y montaje de circuitos. Cada proyecto demuestra la aplicación de la lógica y la atención al detalle, preparando a los estudiantes para la electrónica.</p>
                         </div>
                     </div>
 
                     <!-- Subject 6 -->
                     <div class="subject-card">
                         <div class="subject-image">
-                            <img src="imagenes\informatica\teleinformatica.jpg" alt="Teleinformática">
+                            <img src="imagenes\ciclobasico\lenguaje_tecnologico.png" alt="Lenguaje Tecnológico">
                         </div>
                         <div class="subject-content">
-                            <h3>Teleinformática</h3>
-                            <p>Es el campo que estudia la transmisión de información a distancia, utilizando tecnologías de telecomunicaciones y redes de datos. Involucra la transferencia eficiente y segura de datos, voz y video entre diferentes puntos geográficos utilizando infraestructuras como redes de telecomunicaciones, Internet y tecnologías inalámbricas.</p>
+                            <h3>Lenguaje Tecnológico</h3>
+                            <p>El taller de Lenguaje Tecnológico es el espacio donde los alumnos descubren las herramientas digitales. Adquieren un dominio de las funciones básicas de Word, Excel y PowerPoint para comunicar sus ideas de forma efectiva. Desarrollan habilidades en el formato de documentos, el análisis de datos y la creación de presentaciones. Cada proyecto demuestra la aplicación de la organización, la lógica y la creatividad, lo que les proporciona una base sólida para su futuro profesional.</p>
+                        </div>
+                    </div>
+
+                    <!-- Subject 7 -->
+                    <div class="subject-card">
+                        <div class="subject-image">
+                            <img src="imagenes\ciclobasico\dibujo_tecnico.png" alt="Dibujo Técnico">
+                        </div>
+                        <div class="subject-content">
+                            <h3>Dibujo Técnico</h3>
+                            <p>El taller de Dibujo Técnico es el lugar donde los alumnos aprenden a proyectar ideas. Aquí, se inician en el uso de herramientas como AutoCAD para crear planos y diseños con una precisión milimétrica. Adquieren destreza en el trazado de líneas, la acotación y la representación de objetos en dos y tres dimensiones. Cada trabajo que realizan demuestra cómo aplican la lógica, la precisión y la atención al detalle, lo que les proporciona una base sólida para el mundo de la ingeniería y la arquitectura.</p>
                         </div>
                     </div>
     </main>
