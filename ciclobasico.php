@@ -122,7 +122,7 @@
                     <!-- Subject 7 -->
                     <div class="subject-card">
                         <div class="subject-image">
-                            <img src="imagenes\ciclobasico\dibujo_tecnico.png" alt="Dibujo Técnico">
+                            <img src="imagenes\ciclobasico\dibujo_tecnico.pfgvuow<hgv+0t ng" alt="Dibujo Técnico">
                         </div>
                         <div class="subject-content">
                             <h3>Dibujo Técnico</h3>

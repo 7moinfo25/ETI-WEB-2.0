@@ -11,7 +11,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
                 <ul class="dropdown-menu">
                     <li><a href="autoridades.php">Autoridades</a></li>
                     <li><a href="informacion-administrativa.php">Información Administrativa</a></li>
-                    <li><a href="acuerdo-convivencia.php">Acuerdo de convivencia</a></li>
+                    <li><a href="acuerdoConvivencia.pdf" target="_blank">Acuerdo de convivencia</a></li>
                     <li><a href="profesores.php">Profesores</a></li>
                 </ul>
             </li>

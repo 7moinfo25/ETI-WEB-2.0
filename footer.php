@@ -9,10 +9,10 @@
                 <h3>Enlaces rápidos</h3>
                 <ul>
                     <li><a href="index.php">Inicio</a></li>
-                    <li><a href="#">Ciclo Básico</a></li>
+                    <li><a href="ciclobasico.php">Ciclo Básico</a></li>
                     <li><a href="#">Ciclo Superior</a></li>
                     <li><a href="horarios.php">Horarios</a></li>
-                    <li><a href="#">Acuerdo de convivencia</a></li>
+                    <li><a href="acuerdoConvivencia.pdf" target="_blank">Acuerdo de convivencia</a></li>
                 </ul>
             </div>
             <div class="footer-col" id="redirect-contacto">
@@ -20,7 +20,7 @@
                 <address>
                     <p>Av. Avellaneda 687</p>
                     <p>Las Flores, CP 7200</p>
-                    <p>Tel: (2244)45-1212</p>
+                    <p>Tel: (2244) 45-1212</p>
                     <p>Email: eest1lasflores@abc.gob.ar</p>
                 </address>
             </div>
