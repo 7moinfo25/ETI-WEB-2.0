@@ -19,16 +19,16 @@ $current_page = basename($_SERVER['PHP_SELF']);
                 <a href="ciclobasico.php" class="nav-link <?php echo ($current_page == 'ciclobasico.php') ? 'active' : ''; ?>">Ciclo Básico</a>
             </li>
             <li class="nav-item">
-                <a href="informatica.php" class="nav-link <?php echo ($current_page == 'informatica.php') ? 'active' : ''; ?>">Informática</a>
-            </li>
-            <li class="nav-item">
-                <a href="electromecanica.php" class="nav-link <?php echo ($current_page == 'electromecanica.php') ? 'active' : ''; ?>">Electromecánica</a>
+                <a href="ciclosuperior.php" class="nav-link <?php echo ($current_page == 'ciclosuperior.php') ? 'active' : ''; ?>">Ciclo Superior</a>
             </li>
             <li class="nav-item">
                 <a href="noticias.php" class="nav-link <?php echo ($current_page == 'noticias.php') ? 'active' : ''; ?>">Noticias</a>
             </li>
             <li class="nav-item">
                 <a href="egresados.php" class="nav-link <?php echo ($current_page == 'egresados.php') ? 'active' : ''; ?>">Egresados</a>
+            </li>
+            <li class="nav-item">
+                <a href="biblioteca.php" class="nav-link <?php echo ($current_page == 'biblioteca.php') ? 'active' : ''; ?>">Biblioteca</a>
             </li>
         </ul>
     </div>
@@ -44,6 +44,8 @@ $current_page = basename($_SERVER['PHP_SELF']);
   <a href="electromecanica.php" tabindex="-1">Electromecanica</a>
   <a href="informatica.php" tabindex="-1">Informática</a>
   <a href="noticias.php" tabindex="-1">Noticias</a>
+  <a href="ciclobasico.php" tabindex="-1">Ciclo Básico</a>
+  <a href="biblioteca.php" tabindex="-1">Biblioteca</a>
 </div>
 
 <div id="overlay" tabindex="-1" class="overlay"></div>

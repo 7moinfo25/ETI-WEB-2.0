@@ -157,50 +157,7 @@ position: 'bottomright'
                 </div>
             </div>
         </section>
-
-        <!-- Botones y Modalidades -->
-        <section class="modalities-section">
-            <div class="container">
-                <div class="section-header">
-                    <h2>Nuestras Modalidades</h2>
-                    <p>Ofrecemos dos especialidades técnicas para que nuestros estudiantes puedan elegir según sus intereses y
-                        aptitudes.</p>
-                </div>
-
-                <div class="modalities-grid">
-                    <div class="modality-card informatica">
-                        <div class="modality-icon">
-                            <i class="fas fa-graduation-cap"></i>
-                        </div>
-                        <h3>Técnico en Informática</h3>
-                        <p>Forma profesionales capacitados en el desarrollo de software, redes informáticas, y mantenimiento de
-                            sistemas computacionales.</p>
-                        <ul>
-                            <li><i class="fas fa-chevron-right"></i> Programación y desarrollo web</li>
-                            <li><i class="fas fa-chevron-right"></i> Redes y seguridad informática</li>
-                            <li><i class="fas fa-chevron-right"></i> Bases de datos y sistemas de información</li>
-                        </ul>
-                        <a href="informatica.php"><button class="btn btn-blue">Explorar Informática</button></a>
-                    </div>
-
-                    <div class="modality-card electromecanica">
-                        <div class="modality-icon">
-                            <i class="fas fa-wrench"></i>
-                        </div>
-                        <h3>Técnico en Electromecánica</h3>
-                        <p>Prepara técnicos con conocimientos en electricidad, mecánica y automatización para el mantenimiento y
-                            operación de equipos industriales.</p>
-                        <ul>
-                            <li><i class="fas fa-chevron-right"></i> Sistemas eléctricos y electrónicos</li>
-                            <li><i class="fas fa-chevron-right"></i> Mecánica industrial y automatización</li>
-                            <li><i class="fas fa-chevron-right"></i> Diseño asistido por computadora (CAD)</li>
-                        </ul>
-                        <a href="electromecanica.php"><button class="btn btn-amber">Explorar Electromecánica</button></a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
+        
     <!-- Footer -->
     <?php include 'footer.php'; ?>
     </main>
